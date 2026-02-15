@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,28 +16,34 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { NumericArray, Collection, AccessorArrayLike } from '@stdlib/types/array';
 
 /**
-* Compute the maximum absolute value of an array according to a mask.
+* Input array.
+*/
+type InputArray = NumericArray | Collection<number> | AccessorArrayLike<number>;
+
+/**
+* Computes the maximum absolute value of an array according to a mask.
 *
-* @module @stdlib/stats-array-mskmaxabs
+* @param x - input array
+* @param mask - mask array
+* @returns maximum absolute value
 *
 * @example
-* var mskmaxabs = require( '@stdlib/stats-array-mskmaxabs' );
-*
 * var x = [ 1.0, -2.0, 4.0, 2.0 ];
 * var mask = [ 0, 0, 1, 0 ];
 *
 * var v = mskmaxabs( x, mask );
 * // returns 2.0
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function mskmaxabs( x: InputArray, mask: InputArray ): number;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = mskmaxabs;
